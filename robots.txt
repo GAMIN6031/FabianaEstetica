@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drafabianacatarino.com.br/sitemap.xml
