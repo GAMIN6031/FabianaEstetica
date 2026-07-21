@@ -1,9 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
   <head>
-    <meta http-equiv="refresh" content="0; url=/Site_FabianaEstetica/" />
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>Redirecionando | Dra. Fabiana Catarino</title>
   </head>
+
   <body>
-    <p>Redirecionando...</p>
+    <noscript>
+      Você precisa habilitar o JavaScript para acessar este site.
+    </noscript>
+
+    <script>
+      (function () {
+        var location = window.location;
+
+        /**
+         * Converte:
+         *
+         * /servicos
+         *
+         * para:
+         *
+         * /?p=/servicos
+         *
+         * O index.html recuperará a rota e restaurará a URL.
+         */
+        var route =
+          location.pathname +
+          location.search +
+          location.hash;
+
+        var redirectUrl =
+          location.protocol +
+          "//" +
+          location.hostname +
+          (location.port ? ":" + location.port : "") +
+          "/?p=" +
+          encodeURIComponent(route);
+
+        location.replace(redirectUrl);
+      })();
+    </script>
   </body>
 </html>
