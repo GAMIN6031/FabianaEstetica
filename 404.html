@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
 
     <script>
-      // Guarda a rota que o usuário tentou acessar
-      sessionStorage.setItem(
-        "redirectPath",
-        window.location.pathname +
-        window.location.search +
-        window.location.hash
-      );
+      (function () {
+        const path =
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
 
-      // Volta para a aplicação React
-      window.location.replace("/");
+        // Salva qualquer rota acessada
+        sessionStorage.setItem("redirectPath", path);
+
+        // Redireciona para a raiz da aplicação
+        window.location.replace(
+          window.location.origin + "/"
+        );
+      })();
     </script>
   </head>
 
